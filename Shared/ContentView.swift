@@ -17,10 +17,10 @@ struct ContentView: View {
         VStack {
             Image("square")
                 .resizable()
-                .frame(width: imageSize, height: imageSize, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: imageSize, height: imageSize, alignment: .center)
                 .cornerRadius(8.0)
                 .padding()
-                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                .shadow(radius: 10)
             
             Stepper(value: $imageSize, in: 150...320, step: 10){
             }.padding().padding(.bottom, 50)
