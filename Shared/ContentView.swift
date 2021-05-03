@@ -23,9 +23,13 @@ struct ContentView: View {
                 .shadow(radius: 10)
             
             Stepper(value: $imageSize, in: 150...320, step: 10){
-            }.padding().padding(.bottom, 50)
+                // Text("image size: \($imageSize)")
+            }
+            .padding()
+            .padding(.bottom, 50)
             
-            TextField("Your Name...", text: $name).textFieldStyle(RoundedBorderTextFieldStyle())
+            TextField("Your Name...", text: $name)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .fixedSize()
             
             Text("Hi, \(name) How are you?")
@@ -34,7 +38,8 @@ struct ContentView: View {
             Button("Reset Name",action:{
                 name = "";
                 showResetAlert.toggle();
-            }).padding()
+            })
+            .padding()
             
             
         }.alert(isPresented: $showResetAlert) { () -> Alert in Alert(title: Text("Reseted Name"), message: Text("Reset Name Succeded"))
